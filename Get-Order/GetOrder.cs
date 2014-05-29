@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Management.Automation;
+using System.Text;
 
 namespace GetOrder
 {
@@ -18,6 +19,7 @@ namespace GetOrder
         public int Cups
         {
             set { _cups = value; }
+            get { return _cups; }
         }
 
         [Parameter(
@@ -29,6 +31,7 @@ namespace GetOrder
         public string Product
         {
             set { _product = value; }
+            get { return _product; }
         }
 
         protected override void ProcessRecord()
@@ -37,7 +40,7 @@ namespace GetOrder
             for (int cup = 1; cup <= _cups; cup++) {
                 order.Add(cup.ToString() + ": A cup of " + _product);
             }
-            WriteObject(order);
+            WriteObject(order, true);
         }
     }
 }
