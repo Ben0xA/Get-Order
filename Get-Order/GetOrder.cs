@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Management.Automation;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GetOrder
 {
